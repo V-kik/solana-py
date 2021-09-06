@@ -819,7 +819,10 @@ class Client(_ClientCore):  # pylint: disable=too-many-public-methods
         :param opt: Token account option specifying at least one of `mint` or `program_id`.
         :param commitment: Bank state to query. It can be either "finalized", "confirmed" or "processed".
         """
+        print(owner, opts, commitment)
         args = self._get_token_accounts_by_owner_args(owner, opts, commitment)
+        print(args)
+        print("-----")
         return self.__get_token_accounts(*args)
 
     def __get_token_accounts(
